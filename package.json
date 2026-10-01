@@ -1,6 +1,6 @@
 {
   "name": "voronoi-fortune",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Computes the Voronoi diagram of planar point sets using Fortune's sweep line algorithm.",
   "type": "module",
   "main": "src/index.js",
