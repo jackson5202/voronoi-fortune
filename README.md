@@ -31,3 +31,10 @@ The trade-off: the beach line is maintained as a linked list rather than a balan
 Three nearly-collinear sites produce a circumscribed circle whose center is numerically unstable. The implementation uses double precision throughout and tolerates the resulting drift, but if your point set contains points that are almost but not exactly collinear, expect vertex positions to jitter by small amounts. If you need exact arithmetic, this is not the right tool.
 
 Duplicate sites are accepted but produce no edge between them; they collapse into a single cell region.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
